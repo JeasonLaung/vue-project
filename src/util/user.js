@@ -84,12 +84,7 @@ class user{
 				//导入权限路由
 				let permission = require('@/permission/'+this.role+'.js')
 				router.addRoutes(permission.router)
-				router.addRoutes([
-					{
-				      path:'*',
-				      component:()=>import('@/views/NotFound.vue'),
-				    }
-				]);
+				
 				store.USER_MENU = permission.nav
 				store.USER_NAVBAR = permission.navbar
 				// console.log(store.USER_NAVBAR)
@@ -99,12 +94,7 @@ class user{
 				resolve(data.data)
 			}).catch(e=>{
 				this.clearInfo()
-				router.addRoutes([
-					{
-				      path:'*',
-				      component:()=>import('@/views/NotFound.vue'),
-				    }
-				]);
+				
 				// reject(e)
 			})
 		})

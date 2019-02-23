@@ -9,7 +9,7 @@ exports.router = [
         	path:'',
         	name:'my_company',
         	component:()=>import('@/views/UserMain/Hr/Company.vue'),
-        	meta:{navIndex:0}
+        	meta:{navIndex:0,other:true}
         },
         // {
         // 	path:'resume',
@@ -21,7 +21,7 @@ exports.router = [
         	name:'my_info',
         	component:()=>import('@/views/UserMain/Student/index.vue'),
 
-        	meta:{navIndex:1}
+        	meta:{navIndex:1,other:true}
 
 
         },
@@ -29,41 +29,41 @@ exports.router = [
         	path:'jobs',
         	name:'my_company_jobs',
         	component:()=>import('@/views/UserMain/Student/VisitJob.vue'),
-        	meta:{navIndex:2}
+        	meta:{navIndex:2,other:true}
 
         },
         {
             path:'invite',
             name:'my_invite',
             component:()=>import('@/views/UserMain/Student/VisitJob.vue'),
-            meta:{navIndex:3}
+            meta:{navIndex:3,other:true}
 
         },
         {
         	path:'delivery',
         	name:'my_delivery',
         	component:()=>import('@/views/UserMain/Student/VisitJob.vue'),
-        	meta:{navIndex:4}
+        	meta:{navIndex:4,other:true}
 
         },
         {
             path:'visit',
             name:'my_visit',
             component:()=>import('@/views/UserMain/Student/VisitJob.vue'),
-            meta:{navIndex:5}
+            meta:{navIndex:5,other:true}
 
         },
         {
             path:'trail',
             name:'my_trail',
             component:()=>import('@/views/UserMain/Student/VisitJob.vue'),
-            meta:{navIndex:6}
+            meta:{navIndex:6,other:true}
 
         },
         {
         	path:'account',
         	name:'my_account',
-        	meta:{navIndex:7}
+        	meta:{navIndex:7,other:true}
 
         },
     ],
@@ -74,8 +74,17 @@ exports.router = [
   {
     path:'/chat',
     component:()=>import('@/views/UserMain/Chat/index.vue'),
+    meta:{other:true},
+
     name:'chat'
-  }
+  },
+      {
+      path:'*',
+      component:()=>import('@/views/NotFound.vue'),
+      meta:{
+        other: true,
+      },
+    }
 ]
 exports.nav = [
     {

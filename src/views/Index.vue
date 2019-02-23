@@ -34,7 +34,10 @@
             <li :class="{'active':navbarIndex==2}" @click='navbarIndex=2' >推荐职位</li>
           </ul>
         </div>
-        <div class="jobs" v-if="jobs!=false">
+        <div style="height: 650px" v-if="jobs==false">
+          
+        </div>
+        <div class="jobs animated fadeIn" v-if="jobs!=false">
           <ul>
             <li v-for="(i,index) in jobs" :key="index" v-if="i.company">
               <div class="item">

@@ -3,7 +3,7 @@
     <div class="top clear">
       <div class="info">
         <p class="title clear">
-          <span class='job-name' :title="job_name">{{job_name}}</span>
+          <span class='job-name' :title="job_name" @click="$emit('detail')">{{job_name}}</span>
           <span>[{{province}}·{{city}}]</span>
           <span class="date">{{publish.split(' ')[0]}}发布</span>
         </p>
@@ -17,7 +17,7 @@
         </p>
       </div><!-- info -->
 
-      <div class="company">
+      <div class="company" @click="$emit('company')">
         <p class="name">
           {{company}}
           <company-tag
@@ -29,7 +29,7 @@
 
       </div><!-- company -->
       
-      <div class="logo-container">
+      <div class="logo-container a" @click="$emit('company')">
         <img :src="logo" class="logo"><!-- logo -->
       </div>
       
@@ -165,6 +165,8 @@ export default {
         float: left;
       }
       .job-name{
+      cursor: pointer;
+
         display: inline-block;
         @include over-text;
         max-width: 400px;
@@ -197,6 +199,7 @@ export default {
     width: 300px;
     .name{
       color: $blue;
+      cursor: pointer;
     }
     
   }

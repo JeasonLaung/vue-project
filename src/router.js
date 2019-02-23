@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from './store.js';
 import Router from 'vue-router';
 // import Home from './views/Home.vue';
 import About from './views/About.vue';
@@ -125,6 +126,16 @@ export default new Router({
         }
       ]
     },/*college_detail*/
+    // {
+    //   path:'404',
+    //   name:'404',
+    //   component:()=>import('@/views/NotFound.vue'),
+    //   meta:{
+    //     other: true,
+    //   },
+
+    // }
+
     // {
     //   path: '/me',
     //   component: UserMain,

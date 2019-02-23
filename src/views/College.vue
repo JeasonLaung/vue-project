@@ -23,7 +23,9 @@
     </div><!-- search-box-->
     <div class="result">
       <div class="result-inner">
+        <div v-if='JSON.stringify(colleges)=="[]"' style="height: 600px;"></div>
         <college
+          v-if=""
           v-for="c in colleges"
           :city="c.city"
           :name="c.name"

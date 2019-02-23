@@ -164,7 +164,7 @@ export default {
     }
 
     input{
-      margin-top: 13px;
+      margin:10px 0 5px;
       width: calc(100% - 30px);
 
       line-height: 30px;
@@ -191,15 +191,19 @@ export default {
       @include no-select;
       position: absolute;
       top: 50%;
-      transform:translateY(-50%);
-      padding-left: 15px;
+      transform:translateY(-53%);
+      margin-left: 15px;
+      padding: 0 5px;
       font-size: 16px;
       transition:all .4s;
+      
+
       &.trigger{
         color: $font3;
-        font-size: 11px;
-        top: 2px;
-        transform:none;
+        font-size: 14px;
+        background-color: #fff;
+        top: 0;
+        transform:-50%;
       }
     }
   }

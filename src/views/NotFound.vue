@@ -27,7 +27,6 @@ export default {
       
     }
   },
-  
   methods: {
     
   },
@@ -84,6 +83,7 @@ body {
   bottom: 0;
   position: absolute;
   height: 27vmin;
+  width: 100%;
   // background: url("@assets/mars.svg") no-repeat bottom center;
   background-size: cover;
 }

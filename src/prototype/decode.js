@@ -11,3 +11,6 @@ String.prototype.toUtf8 = function () {
   str = str.replace(/\\/g, "");
   return str;
 }
+String.prototype.cut = function (len) {
+  return this.slice(0,len) + '...';
+}

@@ -1,2 +1,2 @@
 import './moment.js'
-import './text.js'
+import './decode.js'

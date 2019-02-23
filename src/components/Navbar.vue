@@ -54,12 +54,15 @@
                 placeholder="用户名" 
                 style="margin-bottom: 20px;" 
                 v-model="form1.username"
+                ref="username"
                 />
               <s-input 
                 see 
                 type="password" 
                 placeholder="密码"
                 v-model="form1.password"
+                
+                
                 />
             </div>
             
@@ -78,21 +81,20 @@
                 />
             </div>
 
-              <el-alert
-                style="margin-top: 20px;position: absolute;bottom: -40px;"
-                v-show="alert.visible==true"
-                :title="alert.title"
-                :type="alert.type"
-                show-icon
-                @close='alert.visible=false;'
-              />
-
+              
           </div>
         </div>
-        
+        <el-alert
+            style="position: absolute;width: 380px;bottom: 75px;"
+            v-show="alert.visible==true"
+            :title="alert.title"
+            :type="alert.type"
+            show-icon
+            @close='alert.visible=false;'
+          />
 
         <span slot="footer" class="dialog-footer">
-          <el-button @click="$emit('cancelLogin');">取 消</el-button>
+          <el-button @click="show_login = false">取 消</el-button>
           <el-button type="primary" @click="beforeLogin()">登 录</el-button>
         </span>
       </el-dialog>
@@ -174,9 +176,9 @@ export default {
       this.alert.type = yes_or_no ? 'success' : 'error'
       this.alert.title = title
       this.alert.visible = true;
-      this.timer = setTimeout(()=>{
-      this.alert.visible = false;
-      },5000)
+      // this.timer = setTimeout(()=>{
+      // this.alert.visible = false;
+      // },5000)
     }
   },
 
@@ -254,7 +256,7 @@ a,a:visited{
     display: flex;
     align-items:center;
     .logo{
-      max-height: 25px;
+      max-height: 50px;
       margin: -2px 20px 2px 0;
     }
     .items{
@@ -384,7 +386,7 @@ a,a:visited{
     }
   }
   .login-from{
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 
     h1{
       margin-bottom: 40px;

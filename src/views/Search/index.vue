@@ -48,7 +48,8 @@
             :min_salary="i.min_salary"
             :is_vip="i.company.is_vip"
             :is_auth="i.company.is_auth"
-
+            @detail="$router.push('/job/'+i.id)"
+            @company="$router.push('/company/'+i.company_id)"
     			  :welfare="i.company.labels == false ? '' : '“'+i.company.labels.map(v=>v.name).join(',')+'”'"
     			 />
           <div style="display: flex;justify-content: center;width: 800px;">

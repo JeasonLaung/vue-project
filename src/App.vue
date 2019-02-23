@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <navbar @login="" @register="" v-if="/^\/(my|chat)/.test($route.path) == false"></navbar>
-    <transition enter-active-class="animated fadeIn">
-      <div 
-        class="page" 
-        ref="page" 
-        v-if="isShow" 
-        style="min-height: 500px;" 
-        :style="{'margin-top': /^\/(my|chat)/.test($route.path) == false ? '56px' : '0px'}">
-        <router-view/>
-      </div> 
-    </transition>
-    <foot :isAbs='true' v-if="/^\/(my|chat)/.test($route.path) == false"/>
+    <navbar @login="" @register="" v-if="$route.meta['other'] !== true"></navbar>
+    
+    <div 
+      class="page" 
+      ref="page" 
+      v-if="isShow" 
+      style="min-height: 500px;" 
+      :style="{'margin-top': $route.meta['other'] !== true ? '56px' : '0px'}">
+      <transition enter-active-class="animated ">
+        <router-view :class="{'fadeIn':$route.meta['other'] !== true}"/>
+      </transition>
+    </div> 
+    
+    <foot :isAbs='true' v-if="$route.meta['other'] !== true"/>
   </div>
 </template>
 
